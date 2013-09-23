@@ -1,0 +1,40 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: SetColor [Color]
+::
+:: Simple batch file that sets the current console color to what is chosen.  Sending
+:: the color "Normal" will set the color back to the default.
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Switch %@Upper[%1]
+	Case CYAN
+		echos ^e[36;1m
+
+	Case RED
+		echos ^e[31;1m
+
+	Case YELLOW
+		echos ^e[33;1m
+
+	Case MAGENTA
+		echos ^e[35;1m
+
+	Case WHITE
+		echos ^e[37;1m
+
+	Case GREEN
+		echos ^e[32;1m
+
+	Case BLACK
+		echos ^e[30m
+
+	Case BLUE
+		echos ^e[34m
+		
+	Case NORMAL
+		echos ^e[0m
+
+	Default
+		echo ** ERROR Setting Color.  Unknown Directive:  '%1' **
+
+EndSwitch
